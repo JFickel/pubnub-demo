@@ -11,6 +11,9 @@ var App = Ember.Application.extend({
   Resolver: Resolver
 });
 
+console.log('hi');
+console.log(window.PubNubEmber);
+
 loadInitializers(App, config.modulePrefix);
 
 export default App;
