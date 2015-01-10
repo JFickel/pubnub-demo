@@ -1,3 +1,26 @@
 <h2 id="title">Welcome to Ember.js</h2>
 
+<div class="container">
+  <h4>Online Users</h4>
+  <ul>
+    {{#each user in users}}
+    <li>{{user}}</li>
+    {{/each}}
+  </ul>
+  <br />
+  <h4>Chat History ({{messages.length}})</h4>
+  <form>
+    {{input type="text" value=new_message placeholder="Enter a message"}}
+    <input type="submit" {{action publish}} />
+  </form>
+  <br />
+  <div class="well">
+    <ul>
+      {{#each message in messages}}
+      <li>{{message}}</li>
+      {{/each}}
+    </ul>
+  </div>
+</div>
+
 {{outlet}}
