@@ -12,12 +12,13 @@
   <form>
     {{input type="text" value=new_message placeholder="Enter a message"}}
     <input type="submit" {{action 'publish'}} />
+    <button {{action 'console'}}>Console</button>
   </form>
   <br />
   <div class="well">
     <ul>
       {{#each message in messages}}
-      <li>{{message}}</li>
+        <li>{{message}}</li>
       {{/each}}
     </ul>
   </div>

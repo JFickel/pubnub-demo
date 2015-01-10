@@ -19,6 +19,7 @@ export default Ember.Controller.extend({
 
     // Register for message events
     pn.on(pn.emMsgEv(chan), function (payload) {
+      console.log(payload);
       self.get('messages').pushObject(payload.message);
     });
 
@@ -43,6 +44,9 @@ export default Ember.Controller.extend({
         message: "[User" + this.get('userID') + "]: " + this.get('new_message')
       });
       this.set('new_message', '');
+    },
+    console: function () {
+      console.log(this.get('messages.content'));
     }
   }
 });
